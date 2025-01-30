@@ -1,0 +1,142 @@
+/* modal.css */
+.close-container {
+  position: absolute;
+  top: 7.5px;
+  right:7.5px;
+  width: 35px;
+  height: 35px;
+  background: rgb(228, 228, 228);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close-wrapper {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 45;
+}
+
+.close-container button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-container svg {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding:1rem;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: #333;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-body img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.input-email {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 20rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button-modal{
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #5a4acb;
+}
+
+.success-message {
+  background-color: #000000;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}

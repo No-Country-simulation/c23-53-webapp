@@ -1,5 +1,5 @@
 import React from "react";
-import { pricingPlans } from "../DataPremium/DataCards";
+import { pricingPlans } from "../resources/DataCards";
 import CheckMark from "@/app/common/assets/icons/CheckMark";
 
 export const CardsPricing = () => {

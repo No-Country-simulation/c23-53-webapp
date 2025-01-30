@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import Img from "@/app/common/assets/img";
-import { navLinksDesktop } from "../Navbar/DataLinks";
+import { navLinksDesktop } from "../Navbar/resources/DataLinks";
 import Link from "next/link";
 
 export const Footer = () => {

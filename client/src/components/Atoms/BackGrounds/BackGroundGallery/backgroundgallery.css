@@ -80,9 +80,9 @@ body {
   }
   
   
-   .blur-circle {
+   .blur-circle-g {
     position: absolute;
-    width: 400px;
+    width: 200px;
     height: 400px;
     filter: blur(100px);
     border-radius: 50%;

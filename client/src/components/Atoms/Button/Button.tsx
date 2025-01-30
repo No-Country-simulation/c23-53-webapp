@@ -1,46 +1,50 @@
-"use client"
-import React, { ReactNode } from 'react';
-import styles from './Button.module.css';
 
+"use client";
+import React, { ReactNode } from "react";
+import "./button.css"; 
 
 interface ButtonProps {
-  className?:string;
-  text?: string; // Texto opcional para el botón
-  color?: string; // Color de fondo del botón
-  textColor?: string; // Color del texto
-  padding?: string; // Espaciado interno (padding)
-  fontSize?: string; // Tamaño de la fuente
-  hoverColor?: string; // Color al pasar el mouse
-  children?: ReactNode; // Para contenido adicional
-  onClick?: () => void; // Evento opcional de clic
+  className?: string;
+  textColor?:string;
+  text?: string;
+  padding?: string;
+  fontSize?: string;
+  fontWeight?: "300" | "400" | "500" | "600" | "700";
+  border?:string;
+  backgroundColor?: string;
+  children?: ReactNode;
+  onClick?: () => void;
+  variant?: "primary" | "secondary-outline" | "danger" | "success" | "off";
 }
 
 export const Button: React.FC<ButtonProps> = ({
   text,
-  color = '#007BFF', // Color por defecto (azul)
-  textColor = '#FFFFFF', // Color del texto por defecto (blanco)
-  padding = '10px 22px', // Padding por defecto
-  fontSize = '16px', // Tamaño de fuente por defecto
-  hoverColor = '#ffffff', // Color de hover por defecto
+  padding = "10px 22px",
+  textColor,
+  fontSize = "16px",
+  fontWeight = "700",
+  border,
   children,
+  backgroundColor,
   onClick,
+  variant = "primary",
+  className = "",
 }) => {
   return (
     <button
-      className={styles.button}
+      className={`button ${variant} ${className}`} 
       style={{
-        backgroundColor: color,
-        color: textColor,
+        fontWeight,
         padding,
         fontSize,
+        border,
+        color:textColor,
+        backgroundColor,
       }}
-      onMouseOver={(e) =>
-        (e.currentTarget.style.backgroundColor = hoverColor)
-      }
-      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = color)}
       onClick={onClick}
     >
       {children || text}
     </button>
   );
 };
+
