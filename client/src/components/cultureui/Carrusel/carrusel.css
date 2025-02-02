@@ -1,0 +1,81 @@
+.carousel {
+    position: relative;
+    width: 700px; /* Tamaño fijo para evitar cambios */
+    height: 400px; /* Tamaño fijo para evitar cambios */
+    margin: auto;
+    padding: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-button {
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.carousel-content {
+    position: relative; /* Asegura que el overlay y el texto se posicionen correctamente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    clip-path: inset(0 round 6px);
+    transition: filter 0.3s ease-in-out;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom:10%;
+    left: 6%;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.text-overlay h3 {
+    font-size: 1.5rem;
+    
+}
+
+.text-overlay p {
+    font-size: 1rem;
+}
+
+.carousel-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0; /* Asegura que el overlay esté detrás del texto */
+}
+
+.carousel-content:hover img {
+    filter: blur(3px);
+}
+
+.carousel-content:hover .text-overlay,
+.carousel-content:hover::after {
+    opacity: 1;
+}
