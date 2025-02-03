@@ -3,7 +3,7 @@ import Icon from "@/app/common/assets/icons";
 
 export const pricingPlans = [
   {
-    id: "free",
+    id: "1",
     title: "Free Plan",
     price: "$0 / month",
     buttonLabel: "Start for free",
@@ -23,26 +23,7 @@ export const pricingPlans = [
     },
   },
   {
-    id: "one-time",
-    title: "One Time Payment",
-    price: "$15 / month",
-    buttonLabel: "Buy Now",
-    description: [
-      "Access to premium components without a subscription.",
-      "Select a specific component and pay only for what you need.",
-      "Perfect for small projects that require an extra touch.",
-    ],
-    icon: Icon.DiamonBlack,
-    color: {
-      backgroundCard: "#50BB9B",
-      backgroundSvg: "#B2FDE6",
-      button: "#B2FDE6",
-      text: "#000000",
-      checkMark: "#B2FDE6",
-    },
-  },
-  {
-    id: "premium",
+    id: "2",
     title: "Premium",
     price: "$50 / month",
     buttonLabel: "Buy Now",
@@ -63,7 +44,7 @@ export const pricingPlans = [
     },
   },
   {
-    id: "personalized",
+    id: "3",
     title: "Personalized",
     price: "$150 / month",
     buttonLabel: "Buy Now",
@@ -84,3 +65,23 @@ export const pricingPlans = [
     },
   },
 ];
+
+// {
+//   id: "one-time",
+//   title: "One Time Payment",
+//   price: "$15 / month",
+//   buttonLabel: "Buy Now",
+//   description: [
+//     "Access to premium components without a subscription.",
+//     "Select a specific component and pay only for what you need.",
+//     "Perfect for small projects that require an extra touch.",
+//   ],
+//   icon: Icon.DiamonBlack,
+//   color: {
+//     backgroundCard: "#50BB9B",
+//     backgroundSvg: "#B2FDE6",
+//     button: "#B2FDE6",
+//     text: "#000000",
+//     checkMark: "#B2FDE6",
+//   },
+// },

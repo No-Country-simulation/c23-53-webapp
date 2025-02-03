@@ -4,14 +4,14 @@ import React from "react";
 
 export const Gallery = () => {
   return (
-    <section className="w-full h-[60rem] mt-40 flex flex-col gap-10 relative">
+    <section className="w-full h-auto my-28 md:mt-40 flex flex-col gap-10 relative">
        <BackgroundGallery />
-      <div className="flex flex-col gap-4 items-center">
-        <h2 className="text-[40px] font-bold text-[var(--text-color-secondary)]">
+      <div className="flex flex-col gap-4 text-center md:items-center">
+        <h2 className=" text-[32px] w-[80%] m-auto md:full md:text-[40px] font-bold text-[var(--text-color-secondary)]">
           Design Smarter, Build Faster
         </h2>
 
-        <p className="text-[16px] font-bold text-[var(--text-color-primary)]">
+        <p className=" text-[14px] md:text-[16px] font-bold text-[var(--text-color-primary)]">
           Empower your creativity with ready-to-use tools that bring your ideas
           to life effortlessly.
         </p>
