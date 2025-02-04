@@ -3,9 +3,10 @@ import Icon from "@/app/common/assets/icons";
 
 export const pricingPlans = [
   {
-    id: "1",
+    id: "Free",
     title: "Free Plan",
-    price: "$0 / month",
+    priceText: "$0 / month",
+    price:"0",
     buttonLabel: "Start for free",
     description: [
       "Access to X basic components for quick building.",
@@ -23,9 +24,10 @@ export const pricingPlans = [
     },
   },
   {
-    id: "2",
+    id: "Premium",
     title: "Premium",
-    price: "$50 / month",
+    priceText: "$50 / month",
+    price:"50",
     buttonLabel: "Buy Now",
     description: [
       "Full access to our complete component library.",
@@ -44,9 +46,10 @@ export const pricingPlans = [
     },
   },
   {
-    id: "3",
+    id: "Personalized",
     title: "Personalized",
-    price: "$150 / month",
+    priceText: "$150 / month",
+    price:"150",
     buttonLabel: "Buy Now",
     description: [
       "Customized components.",

@@ -10,8 +10,11 @@ import CodeSnippet from "@/components/Atoms/CodeSnippet/CodeSnippet";
 
 
 import Carousel from "@/components/cultureui/Carrusel/Carrusel";
+import CommentWithPhoto from "@/components/cultureui/CommentFoto/CommentFoto";
 
 export const Landing = () => {
+
+ 
 
 
   return (
@@ -22,8 +25,8 @@ export const Landing = () => {
       <Footer />
       <div>
 
-        {/* <div className="flex justify-center">
-           <Modal
+        <div className="flex justify-center">
+           {/* <Modal
             title="Subscribe to our Newsletter"
             imageSrc="https://cdn0.geoenciclopedia.com/es/posts/8/0/0/montanas_8_orig.jpg"
             button="Submit"
@@ -37,10 +40,10 @@ export const Landing = () => {
             successMessageBg="#000"
             successMessageText="#fff"
             inputPlaceholder="Enter your email"
-            /> 
-        </div> */}
+            />  */}
+        </div>
         
-        
+       
         
       </div>
     </div>

@@ -78,23 +78,23 @@ import { pricingPlans } from "../resources/DataCards";
 import CheckMark from "@/app/common/assets/icons/CheckMark";
 
 export const CardsPricing = () => {
-  const [isMounted, setIsMounted] = useState(false); // Nuevo estado
+  const [isMounted, setIsMounted] = useState(false); 
   const router = useRouter();
 
-  // Asegúrate de que useRouter se ejecute solo en el cliente
+  
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
   const handleSelectPlan = (plan: any) => {
     if (plan.price !== "Gratis") {
-      router.push(`/pages/checkout?plan=${plan.id}`);
+      router.push(`/pages/checkout?plan=${plan.id}&price=${plan.price}`);
     }
   };
 
-  // Retorna null o un loading state si aún no se ha montado
+  
   if (!isMounted) {
-    return null; // O un indicador de carga
+    return null; 
   }
 
   return (
@@ -127,7 +127,7 @@ export const CardsPricing = () => {
                 </h2>
               </div>
               <p className="text-[32px] text-[#BBBBBB] font-bold">
-                {plan.price}
+                {plan.priceText}
               </p>
               <div className="flex justify-center">
                 <button

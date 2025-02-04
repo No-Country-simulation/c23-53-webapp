@@ -1,5 +1,9 @@
 export const faqs = [
   {
+    question: "What tools are supported by CultureUI?",
+    answer:"CultureUI is optimized for React, Next.js,Typescript and Tailwind CSS, but on the custom plan we also offer support for tools like Figma.",
+  },
+  {
     question: "Can I use the components in commercial projects?",
     answer:
       "Yes, all plans, including the free one, are licensed under the MIT license, allowing you to use them in personal and commercial projects without restrictions.",

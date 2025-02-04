@@ -89,27 +89,23 @@ const Carousel: React.FC<SlideData> = ({
 export default Carousel;
 
 
-const slides = [
-  {
-    image: 'https://images.unsplash.com/photo-1628863360351-37a9bd7da25d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Bienvenido',
-    description: 'Este es el primer slide',
+// const slides = [
+//   {
+//     image: 'https://images.unsplash.com/photo-1628863360351-37a9bd7da25d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//     title: 'Bienvenido',
+//     description: 'Este es el primer slide',
     
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1616715278831-ccfd09ddacba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Descubre más',
-    description: 'Explora nuevas experiencias',
+//   },
+//   {
+//     image: 'https://images.unsplash.com/photo-1616715278831-ccfd09ddacba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//     title: 'Descubre más',
+//     description: 'Explora nuevas experiencias',
   
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1633530733539-b19ca9b05fb0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Descubre más',
-    description: 'Explora nuevas experiencias',
-  
-    
+//   },
+//   {
+//     image: 'https://images.unsplash.com/photo-1633530733539-b19ca9b05fb0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//     title: 'Descubre más',
+//     description: 'Explora nuevas experiencias',
+//   }
 
-    
-  }
-
-];
+// ];
