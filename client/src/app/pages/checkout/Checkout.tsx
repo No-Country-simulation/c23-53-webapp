@@ -5,11 +5,14 @@ import { useSearchParams } from "next/navigation";
 import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 import Paypal from "@/app/common/assets/icons/Paypal";
 
+
+
 const Checkout = () => {
   const searchParams = useSearchParams();
   const plan = searchParams.get("plan");
   const price = searchParams.get("price");
-
+  
+ 
   
   const planColors: Record<string, string> = {
     Premium: "bg-[#2196F3]", 

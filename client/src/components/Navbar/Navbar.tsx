@@ -9,6 +9,20 @@ import { useAuth } from "@/app/hooks/useAuth";
 import Img from "@/app/common/assets/img";
 import { LogOut } from "lucide-react";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const LOGIN_URL =
   "https://c23-53-webapp-production.up.railway.app/api/v1/auth/login";
 
@@ -59,18 +73,18 @@ export const Navbar = () => {
                   <img
                     src={Img.Perro}
                     alt="User profile"
-                    className="w-8 h-8 rounded-full object-cover border-2  border-gray-500 transition-transform duration-200 group-hover:scale-105"
+                    className="w-8 h-8 rounded-full object-cover border-2  border-b-blue-200 transition-transform duration-200 group-hover:scale-105"
                   />
                 </button>
 
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 top-14 bg-black border border-[var(--border-primary)] rounded-lg shadow-xl w-[256px] p-2 animate-slide-down">
+                  <div className="absolute right-0 top-12 bg-[#0A0A0A] border border-[var(--border-primary)] rounded-lg shadow-xl w-[256px] p-2 animate-slide-down">
                     <div className="flex flex-col gap-1 w-full">
                       <div className="flex items-center py-3 px-2 gap-3">
                         <img
                           src={Img.Perro}
                           alt="User profile"
-                          className="w-8 h-8 rounded-full object-cover border"
+                          className="w-7 h-7 rounded-full object-cover border"
                         />
                         <div className="flex flex-col">
                           <p className="font-semibold text-[14px] text-[var(--text-color-secondary)] truncate">
@@ -81,7 +95,7 @@ export const Navbar = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-full flex flex-col border-y border-[var(--border-primary)] mt-3 py-2 gap-1">
+                      <div className="w-full flex flex-col border-y border-[var(--border-primary)] mt-2 py-2 gap-1">
                         <div className="flex flex-col">
                           {navLinks.map((link, index) => (
                             <Link
