@@ -18,12 +18,6 @@ CultureUI es una plataforma digital diseñada para desarrolladores que buscan ac
 -Código optimizado para React, Next.js y Tailwind CSS.  <br>
 -Licencia MIT, ideal para proyectos personales o comerciales.
 
-## Pago único
-
--Acceso a componentes premium sin suscripción.  <br>
--Selecciona un componente específico y paga solo por lo que necesitas.  <br>
--Perfecto para proyectos pequeños que requieren un toque extra.
-
 ## Plan premium
 
 -Acceso completo a nuestra biblioteca avanzada de componentes.  <br>
