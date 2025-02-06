@@ -1,22 +1,36 @@
-
 "use client";
+
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 import Paypal from "@/app/common/assets/icons/Paypal";
-
-
+import PayPalService from "@/app/services/paypalService"; 
 
 const Checkout = () => {
   const searchParams = useSearchParams();
   const plan = searchParams.get("plan");
-  const price = searchParams.get("price");
-  
- 
-  
+  const price = searchParams.get("price"); 
+
   const planColors: Record<string, string> = {
-    Premium: "bg-[#2196F3]", 
-    Personalized: "bg-[#FF9D00]", 
+    Premium: "bg-[#2196F3]",
+    Personalized: "bg-[#FF9D00]",
+  };
+  const handlePayPalCheckout = async () => {
+    if (plan) {
+      try {
+        console.log("Iniciando checkout de PayPal con plan:", plan); 
+        console.log("Precio actual:", price); 
+        const url = await PayPalService.createOrderPaypal(plan);
+        if (url) {
+          console.log("Redirigiendo a PayPal con URL:", url); 
+          window.location.href = url; 
+        }
+      } catch (error) {
+        console.error("Error during PayPal checkout", error);
+      }
+    } else {
+      console.error("Plan is missing");
+    }
   };
 
   return (
@@ -67,7 +81,10 @@ const Checkout = () => {
           </p>
         </div>
         <div className="flex my-16">
-          <button className="w-full h-[75px] flex justify-center items-center border border-[var(--border-primary)] bg-black rounded-lg">
+          <button
+            className="w-full h-[75px] flex justify-center items-center border border-[var(--border-primary)] bg-black rounded-lg"
+            onClick={handlePayPalCheckout} 
+          >
             <Paypal />
           </button>
         </div>

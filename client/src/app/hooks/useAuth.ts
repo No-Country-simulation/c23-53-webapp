@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { fetchAccessToken, logoutService } from "@/app/services/authService";

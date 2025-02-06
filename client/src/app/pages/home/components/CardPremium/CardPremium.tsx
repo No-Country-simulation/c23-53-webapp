@@ -27,7 +27,7 @@ export const CardPremium = () => {
                 padding="12px 30px"
                 fontWeight="700"
               >
-                <Link href="/">Get Premium</Link>
+                <Link href="/pages/premium">Get Premium</Link>
               </Button>
             </div>
           </div>
