@@ -7,17 +7,13 @@ dotenv.config();
 
 @Injectable()
 export class MercadoPagoService {
-
   private client: MercadoPagoConfig;
   private payment: Payment;
 
-  private readonly mp_access_token = this.configService.getOrThrow('MP_ACCESS_TOKEN')
-
-  
+  private readonly mp_access_token =
+    this.configService.getOrThrow('MP_ACCESS_TOKEN');
 
   constructor(private readonly configService: ConfigService) {
-
-   
     // Configurar Mercado Pago usando el SDK oficial
     this.client = new MercadoPagoConfig({
       accessToken: this.mp_access_token, // Acceder al Access Token desde variables de entorno
@@ -28,7 +24,12 @@ export class MercadoPagoService {
   }
 
   // Método para crear un pago
-  async createPayment(amount: number, email: string, description: string, paymentMethod: string) {
+  async createPayment(
+    amount: number,
+    email: string,
+    description: string,
+    paymentMethod: string,
+  ) {
     try {
       const body = {
         transaction_amount: amount,
@@ -54,5 +55,3 @@ export class MercadoPagoService {
     }
   }
 }
-
-

@@ -7,4 +7,3 @@ import { MercadoPagoController } from './mercadopago.controller';
   controllers: [MercadoPagoController],
 })
 export class MercadoPagoModule {}
-

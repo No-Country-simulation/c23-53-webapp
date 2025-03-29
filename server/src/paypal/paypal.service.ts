@@ -2,17 +2,21 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import axios from 'axios';
 import { ConfigService } from '@nestjs/config';
 
-
 @Injectable()
 export class PaypalService {
-  private readonly paypalApiUrl = this.configService.getOrThrow('PAYPAL_API_URL');
+  private readonly paypalApiUrl =
+    this.configService.getOrThrow('PAYPAL_API_URL');
   private readonly clientId = this.configService.getOrThrow('PAYPAL_CLIENT_ID');
-  private readonly clientSecret = this.configService.getOrThrow('PAYPAL_CLIENT_SECRET');
+  private readonly clientSecret = this.configService.getOrThrow(
+    'PAYPAL_CLIENT_SECRET',
+  );
 
   constructor(private readonly configService: ConfigService) {}
   //Access Token de PayPal
   private async getAccessToken(): Promise<string> {
-    const auth = Buffer.from(`${this.clientId}:${this.clientSecret}`).toString('base64');
+    const auth = Buffer.from(`${this.clientId}:${this.clientSecret}`).toString(
+      'base64',
+    );
 
     try {
       const response = await axios.post(
@@ -27,7 +31,10 @@ export class PaypalService {
       );
       return response.data.access_token;
     } catch (error) {
-      throw new HttpException('Error obteniendo el token de PayPal', HttpStatus.BAD_REQUEST);
+      throw new HttpException(
+        'Error obteniendo el token de PayPal',
+        HttpStatus.BAD_REQUEST,
+      );
     }
   }
 
@@ -46,22 +53,29 @@ export class PaypalService {
         },
       ],
       application_context: {
-        return_url: 'http://localhost:3000/paypal/success',  // Redirige después del pago exitoso
-        cancel_url: 'http://localhost:3000/paypal/cancel',   // Redirige si el usuario cancela
+        return_url: 'http://localhost:3000/paypal/success', // Redirige después del pago exitoso
+        cancel_url: 'http://localhost:3000/paypal/cancel', // Redirige si el usuario cancela
       },
     };
 
     try {
-      const response = await axios.post(`${this.paypalApiUrl}/v2/checkout/orders`, orderData, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
+      const response = await axios.post(
+        `${this.paypalApiUrl}/v2/checkout/orders`,
+        orderData,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
 
       return response.data; // Devuelve la orden creada con su ID
     } catch (error) {
-      throw new HttpException('Error creando orden en PayPal', HttpStatus.BAD_REQUEST);
+      throw new HttpException(
+        'Error creando orden en PayPal',
+        HttpStatus.BAD_REQUEST,
+      );
     }
   }
 
@@ -83,9 +97,10 @@ export class PaypalService {
 
       return response.data;
     } catch (error) {
-      throw new HttpException('Error capturando el pago en PayPal', HttpStatus.BAD_REQUEST);
+      throw new HttpException(
+        'Error capturando el pago en PayPal',
+        HttpStatus.BAD_REQUEST,
+      );
     }
   }
 }
-
-

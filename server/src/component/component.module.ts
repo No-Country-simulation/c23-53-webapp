@@ -5,11 +5,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Component, ComponentSchema } from 'src/schemas/component.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{
-      name: Component.name,
-      schema: ComponentSchema
-    }])],
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: Component.name,
+        schema: ComponentSchema,
+      },
+    ]),
+  ],
   providers: [ComponentService],
-  controllers: [ComponentController]
+  controllers: [ComponentController],
 })
 export class ComponentModule {}

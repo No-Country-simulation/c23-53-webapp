@@ -9,4 +9,3 @@ import { PlanModule } from '../plan/plan.module';
   providers: [PaypalService],
 })
 export class PaypalModule {}
-

@@ -4,6 +4,6 @@ import { S3ComponentService } from './s3-component.service';
 
 @Module({
   controllers: [S3ComponentController],
-  providers: [S3ComponentService]
+  providers: [S3ComponentService],
 })
 export class S3ComponentModule {}

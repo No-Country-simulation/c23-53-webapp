@@ -30,7 +30,10 @@ export class AuthService {
 
   async exchangeCodeForToken(code: string) {
     if (!code) {
-      throw new HttpException('Authorization code is required', HttpStatus.BAD_REQUEST);
+      throw new HttpException(
+        'Authorization code is required',
+        HttpStatus.BAD_REQUEST,
+      );
     }
     try {
       const tokenUrl = `https://${this.domain}/oauth/token`;
@@ -44,8 +47,14 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error exchanging code for token:', error.response?.data || error.message);
-      throw new HttpException('Failed to retrieve tokens from Auth0', HttpStatus.UNAUTHORIZED);
+      console.error(
+        'Error exchanging code for token:',
+        error.response?.data || error.message,
+      );
+      throw new HttpException(
+        'Failed to retrieve tokens from Auth0',
+        HttpStatus.UNAUTHORIZED,
+      );
     }
   }
 
@@ -57,8 +66,14 @@ export class AuthService {
       });
       return response.data;
     } catch (error) {
-      console.error('Error fetching user info:', error.response?.data || error.message);
-      throw new HttpException('Failed to retrieve user info', HttpStatus.INTERNAL_SERVER_ERROR);
+      console.error(
+        'Error fetching user info:',
+        error.response?.data || error.message,
+      );
+      throw new HttpException(
+        'Failed to retrieve user info',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -71,7 +86,10 @@ export class AuthService {
     const { sub, email, name } = userInfo;
 
     if (!sub || !email) {
-      throw new HttpException('User data is incomplete', HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(
+        'User data is incomplete',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
 
     const user = await this.userService.findOrCreate({ sub, email, name });

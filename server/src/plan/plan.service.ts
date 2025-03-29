@@ -32,9 +32,13 @@ export class PlanService {
     }
     return plan;
   }
-  
+
   async update(id: string, updatePlanDto: UpdatePlanDto): Promise<Plan> {
-    const updatedPlan = await this.planModel.findByIdAndUpdate(id, updatePlanDto, { new: true });
+    const updatedPlan = await this.planModel.findByIdAndUpdate(
+      id,
+      updatePlanDto,
+      { new: true },
+    );
     if (!updatedPlan) {
       throw new NotFoundException('Plan not found');
     }
@@ -48,4 +52,3 @@ export class PlanService {
     }
   }
 }
-

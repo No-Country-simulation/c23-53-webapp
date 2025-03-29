@@ -1,4 +1,11 @@
-import { Controller, Get, Query, Res, HttpException, HttpStatus } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Query,
+  Res,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import { Response } from 'express';
 import { AuthService } from './auth.service';
 
@@ -12,7 +19,10 @@ export class AuthController {
       const authUrl = this.authService.getLoginUrl();
       return res.redirect(authUrl);
     } catch (error) {
-      throw new HttpException('Error in login', HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(
+        'Error in login',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -21,7 +31,10 @@ export class AuthController {
     try {
       return await this.authService.authenticateUser(code);
     } catch (error) {
-      throw new HttpException(error.message, error.getStatus() || HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(
+        error.message,
+        error.getStatus() || HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -31,7 +44,10 @@ export class AuthController {
       const logoutUrl = this.authService.getLogoutUrl();
       return res.redirect(logoutUrl);
     } catch (error) {
-      throw new HttpException('Error in logout', HttpStatus.INTERNAL_SERVER_ERROR);
+      throw new HttpException(
+        'Error in logout',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 }

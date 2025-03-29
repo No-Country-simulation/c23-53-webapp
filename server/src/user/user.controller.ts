@@ -16,13 +16,18 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   async getPremiumStatus(@Req() req: any) {
     const user = await this.userService.getUserByAuth0Id(req.user.sub);
-    return { isPremium: user?.isPremium, premiumExpiration: user?.premiumExpiration };
+    return {
+      isPremium: user?.isPremium,
+      premiumExpiration: user?.premiumExpiration,
+    };
   }
 
   @Put('upgrade-premium')
   @UseGuards(JwtAuthGuard)
   async upgradeToPremium(@Req() req: any) {
-    return this.userService.upgradeToPremium(req.user.sub, new Date(Date.now() + 30 * 24 * 60 * 60 * 1000));
+    return this.userService.upgradeToPremium(
+      req.user.sub,
+      new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+    );
   }
 }
-

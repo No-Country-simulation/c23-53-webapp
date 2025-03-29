@@ -17,10 +17,10 @@ async function bootstrap() {
     .setDescription('CULTURE UI | API')
     .setVersion('1.0')
     .build();
-  
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/v1/docs', app, document);
-  
+
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

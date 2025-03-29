@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNumber, IsOptional, IsBoolean } from 'class-validator';
 
 export class CreateDocumentDto {
-
   @ApiProperty({
     example: 'myfile.pdf',
     description: 'El nombre del archivo',
@@ -19,7 +18,8 @@ export class CreateDocumentDto {
 
   @ApiProperty({
     example: 'my-bucket',
-    description: 'El nombre del bucket donde se almacena el archivo en el almacenamiento',
+    description:
+      'El nombre del bucket donde se almacena el archivo en el almacenamiento',
   })
   @IsString()
   bucket: string;

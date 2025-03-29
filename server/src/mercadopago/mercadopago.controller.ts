@@ -7,9 +7,20 @@ export class MercadoPagoController {
 
   @Post('pay')
   async createPayment(
-    @Body() body: { amount: number; email: string; description: string; paymentMethod: string },
+    @Body()
+    body: {
+      amount: number;
+      email: string;
+      description: string;
+      paymentMethod: string;
+    },
   ) {
-    return await this.mercadoPagoService.createPayment(body.amount, body.email, body.description, body.paymentMethod);
+    return await this.mercadoPagoService.createPayment(
+      body.amount,
+      body.email,
+      body.description,
+      body.paymentMethod,
+    );
   }
 
   @Get('status')

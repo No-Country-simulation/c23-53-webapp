@@ -20,7 +20,6 @@ export class DocumentFile extends Document {
 
   @Prop({ required: true }) // Tipo de archivo (MIME Type)
   contentType: string;
-
 }
 
 // Generamos el Schema de Mongoose a partir de la clase

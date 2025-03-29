@@ -23,4 +23,3 @@ export class UpdatePlanDto {
   @IsEnum(['USD', 'EUR', 'MXN'])
   currency?: string;
 }
-

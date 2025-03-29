@@ -1,4 +1,10 @@
-import { IsString, IsArray, IsOptional, ValidateNested, ArrayMinSize } from 'class-validator';
+import {
+  IsString,
+  IsArray,
+  IsOptional,
+  ValidateNested,
+  ArrayMinSize,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 
 class PropertyDto {
@@ -14,7 +20,7 @@ class PropertyDto {
 }
 
 export class CreateComponentDto {
-  @IsString() 
+  @IsString()
   name: string;
 
   @IsString()
